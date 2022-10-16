@@ -1,6 +1,4 @@
-package com.springframework.Springpetclinic.model;
-
-import java.time.LocalDate;
+package model;
 
 public class PetType {
 
