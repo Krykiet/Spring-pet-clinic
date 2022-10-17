@@ -14,7 +14,7 @@
 	</parent>
 	<groupId>com.springframework</groupId>
 	<artifactId>Spring-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>Spring-pet-clinic</name>
 	<description>Spring Framework Pet Clinic Project</description>
 	<properties>
@@ -28,14 +28,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -45,6 +37,7 @@
 		</plugins>
 	</build>
 	<scm>
+		<connection>scm:git:git@github.com:Krykiet/Spring-pet-clinic.git</connection>
 		<developerConnection>scm:git:git@github.com:Krykiet/Spring-pet-clinic.git</developerConnection>
 	  <tag>Spring-pet-clinic-0.0.1</tag>
   </scm>
