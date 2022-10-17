@@ -50,6 +50,6 @@
 	<scm>
 		<developerConnection>scm:git:git@github.com:Krykiet/Spring-pet-clinic.git</developerConnection>
 	  <tag>0.0.1</tag>
-  </scm>
+  	</scm>
 
 </project>
