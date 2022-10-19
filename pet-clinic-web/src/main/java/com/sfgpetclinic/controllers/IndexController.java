@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class indexController {
+public class IndexController {
 
     // Different request options
     @RequestMapping({"","/","index","index.html"})
