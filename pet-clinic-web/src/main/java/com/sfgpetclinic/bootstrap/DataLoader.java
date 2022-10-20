@@ -2,24 +2,32 @@ package com.sfgpetclinic.bootstrap;
 
 import model.Owner;
 import model.Vet;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import services.OwnerService;
 import services.VetService;
-import services.map.OwnerServiceMap;
-import services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    // Creating Owners and Vets
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    @Autowired // not required
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
+
+    // Without Spring:
+//    private final OwnerService ownerService;
+//    private final VetService vetService;
+//
+//    public DataLoader() {
+//        ownerService = new OwnerServiceMap();
+//        vetService = new VetServiceMap();
+//    }
 
     // This is going to be called when Spring context is up and ready
     @Override
