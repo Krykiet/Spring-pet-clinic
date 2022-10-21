@@ -21,7 +21,7 @@ public class OwnerController {
     // bring a Spring Model - interface for passing objects to UI
     public String listOwners(Model model){
         // attributeName and value inside the model
-        model.addAttribute("owners", ownerService.findAll());
+        model.addAttribute("ownersSet", ownerService.findAll());
 
         return "owners/index";
     }
