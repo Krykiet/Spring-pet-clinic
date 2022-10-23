@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import services.OwnerService;
 
-// Double request mapping
-@RequestMapping("/owners")
+// Double request mapping - needed to remove
+//@RequestMapping("/owners")
 @Controller
 public class OwnerController {
 
@@ -17,7 +17,7 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @RequestMapping({"","/", "/index", "/index.html"})
+    @RequestMapping({"/owners"})
     // bring a Spring Model - interface for passing objects to UI
     public String listOwners(Model model){
         // attributeName and value inside the model
