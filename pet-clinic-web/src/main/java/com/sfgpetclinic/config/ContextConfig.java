@@ -2,29 +2,25 @@ package com.sfgpetclinic.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import services.OwnerService;
-import services.PetService;
-import services.PetTypeService;
-import services.VetService;
-import services.map.OwnerServiceMap;
-import services.map.PetServiceMap;
-import services.map.PetTypeServiceMap;
-import services.map.VetServiceMap;
+import services.*;
+import services.map.*;
 
 @Configuration
 public class ContextConfig {
 
     @Bean
-    public VetService vetService() {
-        return new VetServiceMap();
+    SpecialityService specialityService() { return new SpecialityServiceMap(); }
+
+    @Bean
+    VetService vetService(SpecialityService specialityService) {
+        return new VetServiceMap(specialityService);
     }
 
     @Bean
-    public PetTypeService petTypeService() { return new PetTypeServiceMap(); }
+    PetTypeService petTypeService() { return new PetTypeServiceMap(); }
 
     @Bean
-    public PetService petService() {return new PetServiceMap(); }
-
+    PetService petService() { return new PetServiceMap(); }
 
     @Bean
     OwnerService ownerService(PetTypeService petTypeService, PetService petService) {
