@@ -12,6 +12,11 @@ public class ContextConfig {
     SpecialityService specialityService() { return new SpecialityServiceMap(); }
 
     @Bean
+    VisitService visitService() {
+        return new VisitServiceMap();
+    }
+
+    @Bean
     VetService vetService(SpecialityService specialityService) {
         return new VetServiceMap(specialityService);
     }
