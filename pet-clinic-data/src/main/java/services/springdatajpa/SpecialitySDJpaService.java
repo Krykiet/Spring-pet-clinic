@@ -1,12 +1,16 @@
 package services.springdatajpa;
 
 import model.Speciality;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import repositories.SpecialityRepository;
 import services.SpecialityService;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springdatajpa")
 public class SpecialitySDJpaService implements SpecialityService {
 
     private final SpecialityRepository specialityRepository;
@@ -18,7 +22,7 @@ public class SpecialitySDJpaService implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {
         Set<Speciality> specialities = new HashSet<>();
-        specialityRepository.findAll().forEach(specialities::add);
+        specialityRepository.findAll().forEach(specialities::add);  // method reference
         return specialities;
     }
 

@@ -1,6 +1,8 @@
 package services.springdatajpa;
 
 import model.PetType;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import repositories.PetRepository;
 import repositories.PetTypeRepository;
 import services.PetTypeService;
@@ -8,6 +10,8 @@ import services.PetTypeService;
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;
@@ -19,7 +23,7 @@ public class PetTypeSDJpaService implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
         Set<PetType> petTypes = new HashSet<>();
-        petTypeRepository.findAll().forEach(petTypes::add);
+        petTypeRepository.findAll().forEach(petTypes::add); // method reference
         return petTypes;
     }
 
