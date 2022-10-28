@@ -9,27 +9,27 @@ import services.map.*;
 public class ContextConfig {
 
     @Bean
-    SpecialityService specialityService() { return new SpecialityServiceMap(); }
+    SpecialityService specialityService() { return new SpecialityMapService(); }
 
     @Bean
     VisitService visitService() {
-        return new VisitServiceMap();
+        return new VisitMapService();
     }
 
     @Bean
     VetService vetService(SpecialityService specialityService) {
-        return new VetServiceMap(specialityService);
+        return new VetMapService(specialityService);
     }
 
     @Bean
-    PetTypeService petTypeService() { return new PetTypeServiceMap(); }
+    PetTypeService petTypeService() { return new PetTypeMapService(); }
 
     @Bean
-    PetService petService() { return new PetServiceMap(); }
+    PetService petService() { return new PetMapService(); }
 
     @Bean
     OwnerService ownerService(PetTypeService petTypeService, PetService petService) {
-        return new OwnerServiceMap(petTypeService, petService);
+        return new OwnerMapService(petTypeService, petService);
     }
 
 }
