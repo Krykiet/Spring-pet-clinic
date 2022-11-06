@@ -1,5 +1,6 @@
 package com.sfgpetclinic.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import services.OwnerService;
 
 // Double request mapping - needed to remove
+@Slf4j
 @RequestMapping("/owners")
 @Controller
 public class OwnerController {
@@ -25,7 +27,7 @@ public class OwnerController {
     public String listOwners(Model model){
         // attributeName and value inside the model
         model.addAttribute("owners", ownerService.findAll());
-
+        log.debug("Debug log: return \"owners/index\"; ");
         return "owners/index";
     }
 
