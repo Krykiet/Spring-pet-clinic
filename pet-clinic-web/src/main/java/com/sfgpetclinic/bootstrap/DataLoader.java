@@ -1,9 +1,10 @@
 package com.sfgpetclinic.bootstrap;
 
-import model.*;
+
+import com.sfgpetclinic.model.*;
+import com.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import services.*;
 
 import java.time.LocalDate;
 

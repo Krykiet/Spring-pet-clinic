@@ -3,7 +3,7 @@ package com.sfgpetclinic.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import services.VetService;
+import com.sfgpetclinic.services.VetService;
 
 @Controller
 public class VetController {
